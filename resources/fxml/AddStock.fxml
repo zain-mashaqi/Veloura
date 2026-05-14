@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="680.0"
+            prefWidth="820.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.AddStockController">
+
+    <children>
+
+        <ImageView fitHeight="680.0" fitWidth="820.0" preserveRatio="false">
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <Pane prefHeight="680.0"
+              prefWidth="820.0"
+              style="-fx-background-color:rgba(3,7,14,0.78);" />
+
+        <Pane layoutX="45.0"
+              layoutY="35.0"
+              prefHeight="610.0"
+              prefWidth="730.0"
+              style="-fx-background-color:rgba(4,10,18,0.86);
+                     -fx-background-radius:24;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:24;
+                     -fx-border-width:1.2;">
+
+            <children>
+
+                <Label layoutX="35.0" layoutY="26.0"
+                       text="Add Stock"
+                       style="-fx-text-fill:#F8FAFC; -fx-font-family:Georgia; -fx-font-size:34px;" />
+
+                <Label layoutX="38.0" layoutY="76.0"
+                       text="Add new purchase stock to inventory"
+                       style="-fx-text-fill:#C9D3E8; -fx-font-size:14px;" />
+
+                <Line layoutX="35.0" layoutY="110.0"
+                      startX="0.0" endX="650.0"
+                      stroke="#D4A64A" strokeWidth="1.2" />
+
+                <Label layoutX="60.0" layoutY="145.0" text="Supplier Name"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtSupplierName"
+                           layoutX="210.0" layoutY="136.0"
+                           prefHeight="40.0" prefWidth="420.0"
+                           promptText="Supplier name"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="205.0" text="Variant"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <ComboBox fx:id="cmbVariant"
+                          layoutX="210.0" layoutY="196.0"
+                          prefHeight="40.0" prefWidth="420.0"
+                          promptText="Select variant"
+                          style="-fx-background-color:rgba(2,9,16,0.88);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;
+                                 -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="265.0" text="Quantity"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtQty"
+                           layoutX="210.0" layoutY="256.0"
+                           prefHeight="40.0" prefWidth="420.0"
+                           promptText="Quantity"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="325.0" text="Cost Price"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtCostPrice"
+                           layoutX="210.0" layoutY="316.0"
+                           prefHeight="40.0" prefWidth="420.0"
+                           promptText="Cost price"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="385.0" text="Purchase Date"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <DatePicker fx:id="dpPurchaseDate"
+                            layoutX="210.0" layoutY="376.0"
+                            prefHeight="40.0" prefWidth="420.0"
+                            style="-fx-background-color:rgba(2,9,16,0.88);
+                                   -fx-background-radius:10;
+                                   -fx-border-color:#8B6526;
+                                   -fx-border-radius:10;
+                                   -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="445.0" text="Expiry Date"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <DatePicker fx:id="dpExpiryDate"
+                            layoutX="210.0" layoutY="436.0"
+                            prefHeight="40.0" prefWidth="420.0"
+                            promptText="Optional for cosmetics"
+                            style="-fx-background-color:rgba(2,9,16,0.88);
+                                   -fx-background-radius:10;
+                                   -fx-border-color:#D4A64A;
+                                   -fx-border-radius:10;
+                                   -fx-font-size:14px;" />
+
+                <Label fx:id="lblMessage"
+                       layoutX="60.0" layoutY="555.0"
+                       prefWidth="410.0"
+                       style="-fx-text-fill:#FFD166; -fx-font-size:13px;" />
+
+                <Button fx:id="btnSave"
+                        layoutX="505.0" layoutY="545.0"
+                        prefHeight="42.0" prefWidth="110.0"
+                        text="Save"
+                        onAction="#handleSave"
+                        style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                               -fx-text-fill:#06101F;
+                               -fx-font-size:14px;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:12;" />
+
+                <Button fx:id="btnCancel"
+                        layoutX="625.0" layoutY="545.0"
+                        prefHeight="42.0" prefWidth="90.0"
+                        text="Cancel"
+                        onAction="#handleCancel"
+                        style="-fx-background-color:transparent;
+                               -fx-border-color:#D4A64A;
+                               -fx-border-radius:12;
+                               -fx-background-radius:12;
+                               -fx-text-fill:#E7C16B;
+                               -fx-font-size:14px;" />
+
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

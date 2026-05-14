@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane"
+            prefHeight="710.0"
+            prefWidth="1006.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.SalesController">
+
+    <children>
+
+        <ImageView fitHeight="710.0" fitWidth="1006.0" preserveRatio="false">
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <Pane prefHeight="710.0"
+              prefWidth="1006.0"
+              style="-fx-background-color:rgba(3,7,14,0.70);" />
+
+        <AnchorPane layoutX="0.0"
+                    layoutY="0.0"
+                    prefHeight="710.0"
+                    prefWidth="255.0">
+
+            <children>
+
+                <Pane prefHeight="710.0"
+                      prefWidth="255.0"
+                      style="-fx-background-color:rgba(2,5,10,0.74);" />
+
+                <Line layoutX="254.0" layoutY="0.0"
+                      startX="0.0" startY="0.0"
+                      endX="0.0" endY="710.0"
+                      stroke="#D4A64A"
+                      strokeWidth="1.1"/>
+
+                <Label fx:id="lblStoreName"
+                       layoutX="55.0"
+                       layoutY="49.0"
+                       text="VELOURA"
+                       style="-fx-text-fill:#D4A64A; -fx-font-size:28; -fx-font-weight:bold;" />
+
+                <VBox layoutX="30.0"
+                      layoutY="116.0"
+                      prefHeight="560.0"
+                      prefWidth="190.0"
+                      spacing="10.0">
+
+                    <children>
+
+                        <Button fx:id="btnDashboard"
+                                onAction="#goToDashboard"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="▥ Dashboard"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnProducts"
+                                onAction="#goToProducts"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="▣ Products"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnCustomers"
+                                onAction="#goToCustomers"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="♟ Customers"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnSales"
+                                onAction="#goToSales"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="🛒 Sales"
+                                style="-fx-background-color:linear-gradient(to right,#F2C66D,#B98224);
+                                       -fx-text-fill:#06101F;
+                                       -fx-font-weight:bold;
+                                       -fx-background-radius:12;" />
+
+                        <Button fx:id="btnReturns"
+                                onAction="#goToReturns"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="↩ Returns"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnInventory"
+                                onAction="#goToInventory"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="▣ Inventory"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnUsers"
+                                onAction="#goToUsers"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="♙ Users"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnProductStats"
+                                onAction="#goToProductStats"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="📈 Product Stats"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnLogout"
+                                onAction="#handleLogout"
+                                prefHeight="46.0"
+                                prefWidth="190.0"
+                                text="↩ Logout"
+                                style="-fx-background-color:transparent;
+                                       -fx-text-fill:white;" />
+
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+        <Label fx:id="lblPageTitle"
+               layoutX="290.0"
+               layoutY="45.0"
+               text="Sales"
+               style="-fx-text-fill:#F8FAFC; -fx-font-size:34px; -fx-font-family:Georgia;" />
+
+        <Pane fx:id="salesTitleLine"
+              layoutX="290.0"
+              layoutY="98.0"
+              prefHeight="2.0"
+              prefWidth="560.0"
+              style="-fx-background-color:#D8A847;" />
+
+        <Button fx:id="btnAddSale"
+                layoutX="830.0"
+                layoutY="38.0"
+                mnemonicParsing="false"
+                onAction="#handleAddSale"
+                prefHeight="44.0"
+                prefWidth="140.0"
+                text="+ Add Sale"
+                style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                       -fx-text-fill:#06101F;
+                       -fx-font-weight:bold;
+                       -fx-background-radius:12;" />
+
+        <Pane fx:id="salesPanel"
+              layoutX="264.0"
+              layoutY="120.0"
+              prefHeight="520.0"
+              prefWidth="720.0"
+              style="-fx-background-color:rgba(4,10,18,0.78);
+                     -fx-background-radius:22;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:22;">
+
+            <children>
+
+                <TextField fx:id="txtSearchSale"
+                           layoutX="20.0"
+                           layoutY="26.0"
+                           prefHeight="40.0"
+                           prefWidth="340.0"
+                           promptText="Search by Sale ID or Customer..."
+                           style="-fx-background-color:rgba(2,9,16,0.82);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9AA7C7;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;" />
+
+                <ComboBox fx:id="cmbCustomerFilter"
+                          layoutX="370.0"
+                          layoutY="26.0"
+                          prefHeight="40.0"
+                          prefWidth="170.0"
+                          promptText="All Customers"
+                          style="-fx-background-color:rgba(2,9,16,0.82);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;" />
+
+                <ComboBox fx:id="cmbExtraFilter"
+                          layoutX="550.0"
+                          layoutY="26.0"
+                          prefHeight="40.0"
+                          prefWidth="140.0"
+                          promptText="User"
+                          style="-fx-background-color:rgba(2,9,16,0.82);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;" />
+
+                <TableView fx:id="tblSales"
+                           layoutX="15.0"
+                           layoutY="78.0"
+                           prefHeight="350.0"
+                           prefWidth="690.0"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-control-inner-background:#06101F;
+                                  -fx-selection-bar:#B98224;">
+
+                    <columns>
+                        <TableColumn fx:id="colSaleNumber" prefWidth="45.0" text="#" />
+                        <TableColumn fx:id="colSaleId" prefWidth="110.0" text="Sale ID" />
+                        <TableColumn fx:id="colCustomerName" prefWidth="140.0" text="Customer" />
+                        <TableColumn fx:id="colUsername" prefWidth="95.0" text="User" />
+                        <TableColumn fx:id="colSaleDate" prefWidth="105.0" text="Sale Date" />
+                        <TableColumn fx:id="colTotalAmount" prefWidth="105.0" text="Total Amount" />
+                        <TableColumn fx:id="colSaleActions" prefWidth="85.0" text="Actions" />
+                    </columns>
+
+                </TableView>
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

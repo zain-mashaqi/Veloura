@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="570.0"
+            prefWidth="720.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.AddCustomerController">
+
+    <children>
+
+        <ImageView fitHeight="570.0" fitWidth="720.0" preserveRatio="false">
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <Pane prefHeight="570.0" prefWidth="720.0"
+              style="-fx-background-color:rgba(3,7,14,0.78);" />
+
+        <Pane layoutX="45.0" layoutY="35.0"
+              prefHeight="500.0" prefWidth="630.0"
+              style="-fx-background-color:rgba(4,10,18,0.86);
+                     -fx-background-radius:24;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:24;
+                     -fx-border-width:1.2;">
+
+            <children>
+
+                <Label layoutX="35.0" layoutY="26.0"
+                       text="Add Customer"
+                       style="-fx-text-fill:#F8FAFC;
+                              -fx-font-family:Georgia;
+                              -fx-font-size:34px;" />
+
+                <Label layoutX="38.0" layoutY="76.0"
+                       text="Create a new customer profile"
+                       style="-fx-text-fill:#C9D3E8;
+                              -fx-font-size:14px;" />
+
+                <Line layoutX="35.0" layoutY="110.0"
+                      startX="0.0" endX="560.0"
+                      stroke="#D4A64A" strokeWidth="1.2" />
+
+                <Label layoutX="60.0" layoutY="145.0"
+                       text="Name"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtName"
+                           layoutX="190.0" layoutY="136.0"
+                           prefHeight="40.0" prefWidth="360.0"
+                           promptText="Customer name"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="200.0"
+                       text="Email"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtEmail"
+                           layoutX="190.0" layoutY="191.0"
+                           prefHeight="40.0" prefWidth="360.0"
+                           promptText="Customer email"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="255.0"
+                       text="Phone"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtPhone"
+                           layoutX="190.0" layoutY="246.0"
+                           prefHeight="40.0" prefWidth="360.0"
+                           promptText="Phone number"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="310.0"
+                       text="City"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <TextField fx:id="txtCity"
+                           layoutX="190.0" layoutY="301.0"
+                           prefHeight="40.0" prefWidth="360.0"
+                           promptText="City"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <Label layoutX="60.0" layoutY="365.0"
+                       text="Birth Date"
+                       style="-fx-text-fill:white; -fx-font-size:14px;" />
+
+                <DatePicker fx:id="dpBirthDate"
+                            layoutX="190.0" layoutY="356.0"
+                            prefHeight="40.0" prefWidth="360.0"
+                            promptText="Birth date"
+                            style="-fx-background-color:rgba(2,9,16,0.88);
+                                   -fx-background-radius:10;
+                                   -fx-border-color:#8B6526;
+                                   -fx-border-radius:10;
+                                   -fx-font-size:14px;" />
+
+                <Label fx:id="lblMessage"
+                       layoutX="60.0" layoutY="455.0"
+                       prefWidth="320.0"
+                       style="-fx-text-fill:#FFD166;
+                              -fx-font-size:13px;" />
+
+                <Button fx:id="btnSave"
+                        layoutX="405.0" layoutY="450.0"
+                        prefHeight="40.0" prefWidth="90.0"
+                        text="Save"
+                        onAction="#handleSave"
+                        style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                               -fx-text-fill:#06101F;
+                               -fx-font-size:14px;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:12;" />
+
+                <Button fx:id="btnCancel"
+                        layoutX="505.0" layoutY="450.0"
+                        prefHeight="40.0" prefWidth="90.0"
+                        text="Cancel"
+                        onAction="#handleCancel"
+                        style="-fx-background-color:transparent;
+                               -fx-border-color:#D4A64A;
+                               -fx-border-radius:12;
+                               -fx-background-radius:12;
+                               -fx-text-fill:#E7C16B;
+                               -fx-font-size:14px;" />
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

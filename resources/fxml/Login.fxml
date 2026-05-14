@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="620.0" prefWidth="860.0" style="-fx-background-color:#03070D;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.veloura.controller.LoginController">
+
+    <children>
+
+        <AnchorPane fx:id="leftside" prefHeight="620.0" prefWidth="335.0">
+
+            <children>
+
+                <ImageView fitHeight="620.0" fitWidth="335.0" preserveRatio="false">
+                    <image>
+                        <Image url="@../images/gold-bg.png" />
+                    </image>
+                </ImageView>
+
+                <Pane layoutY="-12.0" prefHeight="620.0" prefWidth="335.0" style="-fx-background-color:rgba(2,5,10,0.58);">
+                    <children>
+
+                        <Line endX="240.0" layoutX="38.0" layoutY="101.0" stroke="#B8862E" strokeWidth="1.1" />
+
+                        <ImageView fx:id="imgLogo" fitHeight="145.0" fitWidth="200.0" layoutX="64.0" layoutY="176.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/logo.png" />
+                            </image>
+                        </ImageView>
+
+                        <Label fx:id="lblStoreName" layoutX="64.0" layoutY="294.0" text="VELOURA" textFill="#D4A64A">
+                            <font>
+                                <Font name="Georgia" size="43.0" />
+                            </font>
+                        </Label>
+
+                        <Label fx:id="lblSystemName" layoutX="54.0" layoutY="360.0" text="STORE MANAGEMENT SYSTEM" textFill="#F8FAFC">
+                            <font>
+                                <Font name="Georgia" size="15.0" />
+                            </font>
+                        </Label>
+
+                        <Label layoutX="154.0" layoutY="435.0" text="◇" textFill="#D4A64A">
+                            <font>
+                                <Font name="Segoe UI" size="20.0" />
+                            </font>
+                        </Label>
+
+                    </children>
+                </Pane>
+
+                <Line endY="620.0" layoutX="334.0" stroke="#D4A64A" strokeWidth="1.2" />
+
+                <Line endX="188.0" layoutX="74.0" layoutY="430.0" stroke="#B8862E" strokeWidth="1.0" />
+
+                <Label layoutX="70.0" layoutY="482.0" text="♢" textFill="#D4A64A">
+                    <font>
+                        <Font name="Segoe UI" size="34.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="58.0" layoutY="520.0" text="SECURE" textFill="#F8FAFC">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+
+                <Line endY="44.0" layoutX="135.0" layoutY="497.0" stroke="#B8862E" strokeWidth="1.0" />
+
+                <Label layoutX="157.0" layoutY="482.0" text="♕" textFill="#D4A64A">
+                    <font>
+                        <Font name="Segoe UI" size="34.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="145.0" layoutY="520.0" text="PREMIUM" textFill="#D4A64A">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+
+                <Line endY="44.0" layoutX="224.0" layoutY="497.0" stroke="#B8862E" strokeWidth="1.0" />
+
+                <Label layoutX="250.0" layoutY="482.0" text="◇" textFill="#D4A64A">
+                    <font>
+                        <Font name="Segoe UI" size="34.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="238.0" layoutY="520.0" text="RELIABLE" textFill="#F8FAFC">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="rightside" prefHeight="622.0" prefWidth="525.0">
+
+            <children>
+
+                <ImageView fitHeight="620.0" fitWidth="525.0" preserveRatio="false">
+                    <image>
+                        <Image url="@../images/gold-bg.png" />
+                    </image>
+                </ImageView>
+
+                <Pane prefHeight="620.0" prefWidth="525.0" style="-fx-background-color:rgba(3,7,14,0.64);" />
+
+                <Pane fx:id="loginCard" layoutX="60.0" layoutY="58.0" prefHeight="526.0" prefWidth="384.0" style="-fx-background-color:rgba(4,10,18,0.76); -fx-background-radius:34; -fx-border-color:#B8862E; -fx-border-radius:34; -fx-border-width:1.1;">
+                    <children>
+
+                        <Label fx:id="lblWelcomeTitle" layoutX="62.0" layoutY="74.0" text="Welcome Back" textFill="#F8FAFC">
+                            <font>
+                                <Font name="Georgia" size="36.0" />
+                            </font>
+                        </Label>
+
+                        <Label fx:id="lblSubtitle" layoutX="121.0" layoutY="124.0" text="Please login to continue" textFill="#D4A64A">
+                            <font>
+                                <Font name="Georgia" size="15.0" />
+                            </font>
+                        </Label>
+
+                        <Label fx:id="lblUsername" layoutX="40.0" layoutY="192.0" text="Username" textFill="#F8FAFC">
+                            <font>
+                                <Font name="Georgia" size="15.0" />
+                            </font>
+                        </Label>
+
+                        <TextField fx:id="txtUsername" layoutX="40.0" layoutY="222.0" prefHeight="48.0" prefWidth="305.0" promptText="Enter your username" style="-fx-background-color:rgba(2,9,16,0.80); -fx-text-fill:white; -fx-prompt-text-fill:#8D99AE; -fx-background-radius:10; -fx-border-color:#A8792B; -fx-border-radius:10; -fx-font-size:14;" />
+
+                        <Label fx:id="lblPassword" layoutX="40.0" layoutY="297.0" text="Password" textFill="#F8FAFC">
+                            <font>
+                                <Font name="Georgia" size="15.0" />
+                            </font>
+                        </Label>
+
+                        <PasswordField fx:id="txtPassword" layoutX="40.0" layoutY="327.0" prefHeight="48.0" prefWidth="252.0" promptText="Enter your password" style="-fx-background-color:rgba(2,9,16,0.80); -fx-text-fill:white; -fx-prompt-text-fill:#8D99AE; -fx-background-radius:10; -fx-border-color:#A8792B; -fx-border-radius:10; -fx-font-size:14;" />
+
+                        <TextField fx:id="txtPasswordVisible" layoutX="40.0" layoutY="327.0" managed="false" prefHeight="48.0" prefWidth="252.0" promptText="Enter your password" style="-fx-background-color:rgba(2,9,16,0.80); -fx-text-fill:white; -fx-prompt-text-fill:#8D99AE; -fx-background-radius:10; -fx-border-color:#A8792B; -fx-border-radius:10; -fx-font-size:14;" visible="false" />
+
+                        <Button fx:id="btnTogglePassword" layoutX="303.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleTogglePassword" prefHeight="48.0" prefWidth="42.0" style="-fx-background-color:rgba(2,9,16,0.80); -fx-text-fill:#D4A64A; -fx-background-radius:10; -fx-border-color:#A8792B; -fx-border-radius:10; -fx-font-size:18;" text="⊙" />
+
+                        <Button fx:id="btnForgotPassword" layoutX="28.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleForgotPassword" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color:transparent; -fx-text-fill:#D4A64A; -fx-font-size:13; -fx-underline:true;" text="Forgot Password?" />
+
+                        <Label fx:id="lblLoginError" layoutX="40.0" layoutY="417.0" prefHeight="18.0" prefWidth="305.0" text="Invalid username or password" textFill="#FF6868" visible="false" />
+
+                        <Button fx:id="btnLogin" layoutX="40.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="305.0" style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224); -fx-text-fill:#06101F; -fx-background-radius:10; -fx-border-color:#FFD47A; -fx-border-radius:10; -fx-font-size:16; -fx-font-weight:bold;" text="LOGIN" />
+
+                    </children>
+                </Pane>
+
+            </children>
+        </AnchorPane>
+
+    </children>
+</HBox>

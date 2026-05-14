@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane"
+            prefHeight="640.0"
+            prefWidth="980.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.CustomersController">
+
+    <children>
+
+        <ImageView fitHeight="640.0" fitWidth="980.0" preserveRatio="false">
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <Pane prefHeight="640.0"
+              prefWidth="980.0"
+              style="-fx-background-color:rgba(3,7,14,0.68);" />
+
+        <!-- Sidebar -->
+        <AnchorPane layoutX="0.0"
+                    layoutY="0.0"
+                    prefHeight="640.0"
+                    prefWidth="250.0">
+
+            <children>
+
+                <Pane prefHeight="640.0"
+                      prefWidth="250.0"
+                      style="-fx-background-color:rgba(2,5,10,0.72);" />
+
+                <Line layoutX="249.0"
+                      layoutY="0.0"
+                      startX="0.0"
+                      startY="0.0"
+                      endX="0.0"
+                      endY="640.0"
+                      stroke="#D4A64A"
+                      strokeWidth="1.1"/>
+
+                <Label fx:id="lblStoreName"
+                       layoutX="55.0"
+                       layoutY="42.0"
+                       text="VELOURA"
+                       style="-fx-text-fill:#D4A64A; -fx-font-size:28; -fx-font-weight:bold;" />
+
+                <VBox layoutX="26.0"
+                      layoutY="112.0"
+                      prefHeight="495.0"
+                      prefWidth="198.0"
+                      spacing="13.0">
+
+                    <children>
+
+                        <Button fx:id="btnDashboard"
+                                text="▥  Dashboard"
+                                onAction="#goToDashboard"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnProducts"
+                                text="▣  Products"
+                                onAction="#goToProducts"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnCustomers"
+                                text="♟  Customers"
+                                onAction="#goToCustomers"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:linear-gradient(to right,#F2C66D,#B98224);
+                                       -fx-text-fill:#06101F;
+                                       -fx-font-size:14;
+                                       -fx-font-weight:bold;
+                                       -fx-background-radius:12;" />
+
+                        <Button fx:id="btnSales"
+                                text="🛒  Sales"
+                                onAction="#goToSales"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnInventory"
+                                text="▣  Inventory"
+                                onAction="#goToInventory"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnUsers"
+                                text="♙  Users"
+                                onAction="#goToUsers"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnProductStats"
+                                text="📈  Product Stats"
+                                onAction="#goToProductStats"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:rgba(2,9,16,0.50);
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;
+                                       -fx-background-radius:12;
+                                       -fx-border-color:#8B6526;
+                                       -fx-border-radius:12;" />
+
+                        <Button fx:id="btnLogout"
+                                text="↩  Logout"
+                                onAction="#handleLogout"
+                                prefHeight="42.0"
+                                prefWidth="198.0"
+                                style="-fx-background-color:transparent;
+                                       -fx-text-fill:#F8FAFC;
+                                       -fx-font-size:14;" />
+
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+        <!-- Main Content -->
+        <Label fx:id="lblPageTitle"
+               layoutX="285.0"
+               layoutY="35.0"
+               text="Customers"
+               style="-fx-text-fill:#F8FAFC; -fx-font-family:Georgia; -fx-font-size:34px;" />
+
+        <Pane fx:id="customersTitleLine"
+              layoutX="285.0"
+              layoutY="92.0"
+              prefHeight="2.0"
+              prefWidth="560.0"
+              style="-fx-background-color:#D8A847;" />
+
+        <Button fx:id="btnAddCustomer"
+                layoutX="800.0"
+                layoutY="30.0"
+                mnemonicParsing="false"
+                onAction="#handleAddCustomer"
+                prefHeight="44.0"
+                prefWidth="150.0"
+                text="+ Add Customer"
+                style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                       -fx-text-fill:#06101F;
+                       -fx-background-radius:12;
+                       -fx-font-size:15;
+                       -fx-font-weight:bold;" />
+
+        <!-- Customers Panel -->
+        <Pane fx:id="customersPanel"
+              layoutX="270.0"
+              layoutY="110.0"
+              prefHeight="470.0"
+              prefWidth="680.0"
+              style="-fx-background-color:rgba(4,10,18,0.78);
+                     -fx-background-radius:22;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:22;">
+
+            <children>
+
+                <TextField fx:id="txtSearchCustomer"
+                           layoutX="20.0"
+                           layoutY="26.0"
+                           prefHeight="40.0"
+                           prefWidth="280.0"
+                           promptText="Search by name or email..."
+                           style="-fx-background-color:rgba(2,9,16,0.82);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9AA7C7;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14;" />
+
+                <ComboBox fx:id="cmbCityFilter"
+                          layoutX="315.0"
+                          layoutY="26.0"
+                          prefHeight="40.0"
+                          prefWidth="150.0"
+                          promptText="All Cities"
+                          style="-fx-background-color:rgba(2,9,16,0.82);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;
+                                 -fx-font-size:14;" />
+
+                <ComboBox fx:id="cmbGenderFilter"
+                          layoutX="480.0"
+                          layoutY="26.0"
+                          prefHeight="40.0"
+                          prefWidth="120.0"
+                          promptText="Gender"
+                          style="-fx-background-color:rgba(2,9,16,0.82);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;
+                                 -fx-font-size:14;" />
+
+                <TableView fx:id="tblCustomers"
+                           layoutX="15.0"
+                           layoutY="85.0"
+                           prefHeight="280.0"
+                           prefWidth="650.0"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-control-inner-background:#06101F;
+                                  -fx-table-cell-border-color:transparent;
+                                  -fx-selection-bar:#B98224;
+                                  -fx-selection-bar-non-focused:#B98224;">
+                    <columns>
+                        <TableColumn fx:id="colCustomerNumber" prefWidth="55.0" text="#" />
+                        <TableColumn fx:id="colCustomerName" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="colCustomerEmail" prefWidth="170.0" text="Email" />
+                        <TableColumn fx:id="colCustomerPhone" prefWidth="120.0" text="Phone" />
+                        <TableColumn fx:id="colCustomerCity" prefWidth="95.0" text="City" />
+                        <TableColumn fx:id="colCustomerActions" prefWidth="60.0" text="Actions" />
+                    </columns>
+                </TableView>
+
+                <Button fx:id="btnDeleteSelected"
+                        layoutX="20.0"
+                        layoutY="390.0"
+                        mnemonicParsing="false"
+                        onAction="#handleDeleteSelected"
+                        prefHeight="40.0"
+                        prefWidth="150.0"
+                        text="🗑 Delete Selected"
+                        style="-fx-background-color:#5B1F2B;
+                               -fx-text-fill:#F0D6D6;
+                               -fx-background-radius:10;
+                               -fx-font-size:14;" />
+
+                <Button fx:id="btnRefreshCustomers"
+                        layoutX="180.0"
+                        layoutY="390.0"
+                        mnemonicParsing="false"
+                        onAction="#handleRefresh"
+                        prefHeight="40.0"
+                        prefWidth="110.0"
+                        text="🔄 Refresh"
+                        style="-fx-background-color:rgba(2,9,16,0.82);
+                               -fx-border-color:#D8A847;
+                               -fx-border-radius:10;
+                               -fx-background-radius:10;
+                               -fx-text-fill:#E7C16B;
+                               -fx-font-size:14;" />
+
+                <Button fx:id="btnPreviousPage"
+                        layoutX="420.0"
+                        layoutY="393.0"
+                        mnemonicParsing="false"
+                        onAction="#handlePreviousPage"
+                        prefHeight="34.0"
+                        prefWidth="45.0"
+                        text="◀"
+                        style="-fx-background-color:rgba(2,9,16,0.82);
+                               -fx-text-fill:#D8A847;
+                               -fx-background-radius:8;
+                               -fx-font-size:13;" />
+
+                <Button fx:id="btnNextPage"
+                        layoutX="470.0"
+                        layoutY="393.0"
+                        mnemonicParsing="false"
+                        onAction="#handleNextPage"
+                        prefHeight="34.0"
+                        prefWidth="45.0"
+                        text="▶"
+                        style="-fx-background-color:rgba(2,9,16,0.82);
+                               -fx-text-fill:#D8A847;
+                               -fx-background-radius:8;
+                               -fx-font-size:13;" />
+
+                <Label fx:id="lblPaginationInfo"
+                       layoutX="560.0"
+                       layoutY="400.0"
+                       text="1-6 of 6"
+                       style="-fx-text-fill:white; -fx-font-size:13;" />
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

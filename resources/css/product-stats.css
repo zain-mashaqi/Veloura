@@ -1,0 +1,164 @@
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #071120, #071A33);
+    -fx-border-color: transparent #12233F transparent transparent;
+}
+
+.brand {
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia";
+}
+
+.nav-btn {
+    -fx-background-color: #0E1E38;
+    -fx-text-fill: #E6EDF7;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 16;
+    -fx-background-radius: 6;
+    -fx-pref-height: 38;
+    -fx-pref-width: 145;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #17345E;
+}
+
+.nav-btn-active {
+    -fx-background-color: linear-gradient(to right, #3A3322, #1C2430);
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 16;
+    -fx-background-radius: 6;
+    -fx-border-color: transparent transparent transparent #D4A64A;
+    -fx-border-width: 0 0 0 4;
+    -fx-pref-height: 38;
+    -fx-pref-width: 145;
+}
+
+.main-bg {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 100%, #0B2346, #040A16);
+}
+
+.page-title {
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+.refresh-btn {
+    -fx-background-color: #D4A64A;
+    -fx-text-fill: #111827;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.refresh-btn:hover {
+    -fx-background-color: #E6B957;
+}
+
+.stat-card {
+    -fx-background-color: linear-gradient(to bottom right, #10264A, #0A1832);
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 22, 0.25, 0, 8);
+}
+
+.card-caption {
+    -fx-text-fill: #B8C4D8;
+    -fx-font-size: 13px;
+}
+
+.card-value {
+    -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+.card-value-small {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.icon-blue {
+    -fx-text-fill: #1976F3;
+    -fx-font-size: 26px;
+}
+
+.icon-gold {
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 28px;
+}
+
+.icon-green {
+    -fx-text-fill: #39D873;
+    -fx-font-size: 29px;
+    -fx-font-weight: bold;
+}
+
+.chart-card {
+    -fx-background-color: linear-gradient(to bottom right, #0D2345, #081832);
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 26, 0.25, 0, 9);
+}
+
+.chart-title {
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.chart-pie-label {
+    -fx-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.chart {
+    -fx-padding: 0;
+}
+
+.chart-content {
+    -fx-padding: 0;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.legend-name {
+    -fx-text-fill: #EAF1FF;
+    -fx-font-size: 13px;
+}
+
+.legend-value {
+    -fx-text-fill: #EAF1FF;
+    -fx-font-size: 13px;
+}
+
+.legend-color {
+    -fx-background-radius: 4;
+    -fx-min-width: 17;
+    -fx-min-height: 17;
+    -fx-max-width: 17;
+    -fx-max-height: 17;
+}
+
+.total-row {
+    -fx-border-color: #526175 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10 0 0 0;
+}
+
+.total-text {
+    -fx-text-fill: #D4A64A;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}

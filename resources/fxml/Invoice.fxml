@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0"
+            prefWidth="980.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.InvoiceController">
+
+    <children>
+
+        <!-- الخلفية -->
+        <ImageView fitHeight="720.0"
+                   fitWidth="980.0"
+                   preserveRatio="false">
+
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Overlay -->
+        <Pane prefHeight="720.0"
+              prefWidth="980.0"
+              style="-fx-background-color:rgba(3,7,14,0.76);" />
+
+        <!-- Main Card -->
+        <Pane layoutX="55.0"
+              layoutY="24.0"
+              prefHeight="670.0"
+              prefWidth="870.0"
+              style="-fx-background-color:rgba(4,10,18,0.88);
+                     -fx-background-radius:24;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:24;
+                     -fx-border-width:1.2;">
+
+            <children>
+
+                <!-- Logo -->
+                <Label layoutX="40.0"
+                       layoutY="28.0"
+                       text="VELOURA"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:44px;
+                              -fx-font-weight:bold;
+                              -fx-font-family:Georgia;" />
+
+                <Label layoutX="44.0"
+                       layoutY="88.0"
+                       text="Luxury Store Invoice"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:16px;" />
+
+                <!-- خط -->
+                <Line layoutX="35.0"
+                      layoutY="128.0"
+                      startX="0.0"
+                      endX="795.0"
+                      stroke="#D4A64A"
+                      strokeWidth="1.2" />
+
+                <!-- Left Info -->
+                <Label layoutX="45.0"
+                       layoutY="160.0"
+                       text="Invoice ID:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblInvoiceId"
+                       layoutX="170.0"
+                       layoutY="160.0"
+                       text="-"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <Label layoutX="45.0"
+                       layoutY="198.0"
+                       text="Customer:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblCustomerName"
+                       layoutX="170.0"
+                       layoutY="198.0"
+                       text="-"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <Label layoutX="45.0"
+                       layoutY="236.0"
+                       text="Payment:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblPaymentMethod"
+                       layoutX="170.0"
+                       layoutY="236.0"
+                       text="-"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <!-- Right Info -->
+                <Label layoutX="520.0"
+                       layoutY="160.0"
+                       text="Date:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblSaleDate"
+                       layoutX="610.0"
+                       layoutY="160.0"
+                       text="-"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <Label layoutX="520.0"
+                       layoutY="198.0"
+                       text="Cashier:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblCashier"
+                       layoutX="610.0"
+                       layoutY="198.0"
+                       text="-"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <Label layoutX="520.0"
+                       layoutY="236.0"
+                       text="Paid:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblPaidAmount"
+                       layoutX="610.0"
+                       layoutY="236.0"
+                       text="0.00"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <!-- Status -->
+                <Label layoutX="520.0"
+                       layoutY="272.0"
+                       text="Status:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:14px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblStatus"
+                       layoutX="610.0"
+                       layoutY="268.0"
+                       text="COMPLETED"
+                       style="-fx-background-color:#1E8E3E;
+                              -fx-text-fill:white;
+                              -fx-padding:4 14 4 14;
+                              -fx-background-radius:14;
+                              -fx-font-size:12px;
+                              -fx-font-weight:bold;" />
+
+                <!-- Table -->
+                <TableView fx:id="tblInvoiceItems"
+                           layoutX="40.0"
+                           layoutY="315.0"
+                           prefHeight="250.0"
+                           prefWidth="790.0"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-control-inner-background:#06101F;
+                                  -fx-selection-bar:#B98224;
+                                  -fx-table-cell-border-color:transparent;
+                                  -fx-background-radius:14;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:14;">
+
+                    <columns>
+
+                        <TableColumn fx:id="colProductName"
+                                     prefWidth="190.0"
+                                     text="Product" />
+
+                        <TableColumn fx:id="colBarcode"
+                                     prefWidth="120.0"
+                                     text="Barcode" />
+
+                        <TableColumn fx:id="colSize"
+                                     prefWidth="85.0"
+                                     text="Size" />
+
+                        <TableColumn fx:id="colColor"
+                                     prefWidth="90.0"
+                                     text="Color" />
+
+                        <TableColumn fx:id="colQty"
+                                     prefWidth="75.0"
+                                     text="Qty" />
+
+                        <TableColumn fx:id="colUnitPrice"
+                                     prefWidth="100.0"
+                                     text="Price" />
+
+                        <TableColumn fx:id="colLineTotal"
+                                     prefWidth="125.0"
+                                     text="Total" />
+
+                    </columns>
+
+                </TableView>
+
+                <!-- Totals Box -->
+                <Pane layoutX="470.0"
+                      layoutY="585.0"
+                      prefHeight="70.0"
+                      prefWidth="360.0"
+                      style="-fx-background-color:rgba(2,9,16,0.55);
+                             -fx-background-radius:16;
+                             -fx-border-color:#6D5A2A;
+                             -fx-border-radius:16;">
+
+                    <children>
+
+                        <Label layoutX="18.0"
+                               layoutY="12.0"
+                               text="Subtotal:"
+                               style="-fx-text-fill:#B8C4D8;
+                                      -fx-font-size:14px;" />
+
+                        <Label fx:id="lblSubtotal"
+                               layoutX="250.0"
+                               layoutY="12.0"
+                               text="0.00"
+                               style="-fx-text-fill:white;
+                                      -fx-font-size:14px;
+                                      -fx-font-weight:bold;" />
+
+                        <Label layoutX="18.0"
+                               layoutY="34.0"
+                               text="Regular Discount:"
+                               style="-fx-text-fill:#B8C4D8;
+                                      -fx-font-size:14px;" />
+
+                        <Label fx:id="lblRegularDiscount"
+                               layoutX="250.0"
+                               layoutY="34.0"
+                               text="0.00"
+                               style="-fx-text-fill:white;
+                                      -fx-font-size:14px;
+                                      -fx-font-weight:bold;" />
+
+                        <Label layoutX="18.0"
+                               layoutY="56.0"
+                               text="Birthday Coupon:"
+                               style="-fx-text-fill:#B8C4D8;
+                                      -fx-font-size:14px;" />
+
+                        <Label fx:id="lblBirthdayCoupon"
+                               layoutX="250.0"
+                               layoutY="56.0"
+                               text="0.00"
+                               style="-fx-text-fill:white;
+                                      -fx-font-size:14px;
+                                      -fx-font-weight:bold;" />
+
+                    </children>
+                </Pane>
+
+                <!-- Final Total -->
+                <Label layoutX="470.0"
+                       layoutY="660.0"
+                       text="Final Total:"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:24px;
+                              -fx-font-weight:bold;" />
+
+                <Label fx:id="lblFinalTotal"
+                       layoutX="675.0"
+                       layoutY="660.0"
+                       text="0.00"
+                       style="-fx-text-fill:#D4A64A;
+                              -fx-font-size:28px;
+                              -fx-font-weight:bold;" />
+
+                <!-- Buttons -->
+                <Button layoutX="40.0"
+                        layoutY="600.0"
+                        mnemonicParsing="false"
+                        onAction="#handlePrintInvoice"
+                        prefHeight="50.0"
+                        prefWidth="170.0"
+                        text="🖨 Print"
+                        style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                               -fx-text-fill:#06101F;
+                               -fx-font-size:16px;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:14;" />
+
+                <Button fx:id="btnClose"
+                        layoutX="230.0"
+                        layoutY="600.0"
+                        mnemonicParsing="false"
+                        onAction="#handleClose"
+                        prefHeight="50.0"
+                        prefWidth="150.0"
+                        text="Close"
+                        style="-fx-background-color:transparent;
+                               -fx-border-color:#D4A64A;
+                               -fx-border-radius:14;
+                               -fx-background-radius:14;
+                               -fx-text-fill:#E7C16B;
+                               -fx-font-size:16px;" />
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

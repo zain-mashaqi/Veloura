@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="720.0"
+            prefWidth="980.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.veloura.controller.ReturnsController">
+
+    <children>
+
+        <!-- Background -->
+        <ImageView fitHeight="720.0"
+                   fitWidth="980.0"
+                   preserveRatio="false">
+
+            <image>
+                <Image url="@../images/gold-bg.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Overlay -->
+        <Pane prefHeight="720.0"
+              prefWidth="980.0"
+              style="-fx-background-color:rgba(3,7,14,0.78);" />
+
+        <!-- Main Card -->
+        <Pane layoutX="55.0"
+              layoutY="24.0"
+              prefHeight="670.0"
+              prefWidth="870.0"
+              style="-fx-background-color:rgba(4,10,18,0.88);
+                     -fx-background-radius:24;
+                     -fx-border-color:#8B6526;
+                     -fx-border-radius:24;
+                     -fx-border-width:1.2;">
+
+            <children>
+
+                <!-- Title -->
+                <Label layoutX="40.0"
+                       layoutY="34.0"
+                       text="Returns Management"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:34px;
+                              -fx-font-family:Georgia;
+                              -fx-font-weight:bold;" />
+
+                <Label layoutX="44.0"
+                       layoutY="85.0"
+                       text="Process returned items and update stock automatically"
+                       style="-fx-text-fill:#C9D3E8;
+                              -fx-font-size:15px;" />
+
+                <!-- Top Line -->
+                <Line layoutX="40.0"
+                      layoutY="120.0"
+                      startX="0.0"
+                      endX="785.0"
+                      stroke="#D4A64A"
+                      strokeWidth="1.2" />
+
+                <!-- Back -->
+                <Button layoutX="705.0"
+                        layoutY="42.0"
+                        mnemonicParsing="false"
+                        onAction="#handleBack"
+                        prefHeight="42.0"
+                        prefWidth="120.0"
+                        text="Back to Sales"
+                        style="-fx-background-color:transparent;
+                               -fx-border-color:#D4A64A;
+                               -fx-border-radius:14;
+                               -fx-background-radius:14;
+                               -fx-text-fill:#E7C16B;
+                               -fx-font-size:14px;
+                               -fx-font-weight:bold;" />
+
+                <!-- Sale ID -->
+                <Label layoutX="70.0"
+                       layoutY="165.0"
+                       text="Sale ID"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <TextField fx:id="txtSaleId"
+                           layoutX="225.0"
+                           layoutY="155.0"
+                           prefHeight="40.0"
+                           prefWidth="420.0"
+                           promptText="Enter Sale ID e.g. 40"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <!-- Invoice Items -->
+                <Label layoutX="70.0"
+                       layoutY="225.0"
+                       text="Invoice Item"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <ComboBox fx:id="cmbInvoiceItems"
+                          layoutX="225.0"
+                          layoutY="215.0"
+                          prefHeight="40.0"
+                          prefWidth="420.0"
+                          promptText="Select product from invoice"
+                          style="-fx-background-color:rgba(2,9,16,0.88);
+                                 -fx-background-radius:10;
+                                 -fx-border-color:#8B6526;
+                                 -fx-border-radius:10;
+                                 -fx-font-size:14px;" />
+
+                <!-- Quantity -->
+                <Label layoutX="70.0"
+                       layoutY="285.0"
+                       text="Quantity"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <TextField fx:id="txtQty"
+                           layoutX="225.0"
+                           layoutY="275.0"
+                           prefHeight="40.0"
+                           prefWidth="420.0"
+                           promptText="Quantity to return"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <!-- Reason -->
+                <Label layoutX="70.0"
+                       layoutY="345.0"
+                       text="Reason"
+                       style="-fx-text-fill:white;
+                              -fx-font-size:14px;" />
+
+                <TextField fx:id="txtReason"
+                           layoutX="225.0"
+                           layoutY="335.0"
+                           prefHeight="40.0"
+                           prefWidth="420.0"
+                           promptText="Wrong size / damaged / customer request"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:#9EA7C3;
+                                  -fx-background-radius:10;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:10;
+                                  -fx-font-size:14px;" />
+
+                <!-- Process -->
+                <Button fx:id="btnProcess"
+                        layoutX="675.0"
+                        layoutY="275.0"
+                        mnemonicParsing="false"
+                        onAction="#processReturn"
+                        prefHeight="46.0"
+                        prefWidth="150.0"
+                        text="Process Return"
+                        style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224);
+                               -fx-text-fill:#06101F;
+                               -fx-font-size:15px;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:14;" />
+
+                <!-- Message -->
+                <Label fx:id="lblMessage"
+                       layoutX="70.0"
+                       layoutY="395.0"
+                       prefWidth="500.0"
+                       style="-fx-text-fill:#FFD166;
+                              -fx-font-size:13px;" />
+
+                <!-- Table -->
+                <TableView fx:id="tblReturns"
+                           layoutX="40.0"
+                           layoutY="430.0"
+                           prefHeight="200.0"
+                           prefWidth="790.0"
+                           style="-fx-background-color:rgba(2,9,16,0.88);
+                                  -fx-control-inner-background:#06101F;
+                                  -fx-selection-bar:#B98224;
+                                  -fx-table-cell-border-color:transparent;
+                                  -fx-background-radius:14;
+                                  -fx-border-color:#8B6526;
+                                  -fx-border-radius:14;">
+
+                    <columns>
+
+                        <TableColumn fx:id="colReturnId"
+                                     prefWidth="95.0"
+                                     text="Return ID" />
+
+                        <TableColumn fx:id="colSaleId"
+                                     prefWidth="90.0"
+                                     text="Sale ID" />
+
+                        <TableColumn fx:id="colVariantId"
+                                     prefWidth="100.0"
+                                     text="Variant ID" />
+
+                        <TableColumn fx:id="colProduct"
+                                     prefWidth="180.0"
+                                     text="Product" />
+
+                        <TableColumn fx:id="colQty"
+                                     prefWidth="85.0"
+                                     text="Qty" />
+
+                        <TableColumn fx:id="colReason"
+                                     prefWidth="170.0"
+                                     text="Reason" />
+
+                        <TableColumn fx:id="colDate"
+                                     prefWidth="120.0"
+                                     text="Date" />
+
+                    </columns>
+
+                </TableView>
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

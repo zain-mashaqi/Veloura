@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="760.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.veloura.controller.InventoryController">
+
+    <children>
+
+        <ImageView fitHeight="760.0" fitWidth="1154.0" preserveRatio="false">
+            <image>
+                <Image url="@../images/gold-bg.png" />
+            </image>
+        </ImageView>
+
+        <Pane prefHeight="760.0" prefWidth="1154.0" style="-fx-background-color:rgba(3,7,14,0.70);" />
+
+        <AnchorPane prefHeight="760.0" prefWidth="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="760.0" prefWidth="255.0" style="-fx-background-color:rgba(2,5,10,0.74);" />
+                <Line endX="0.0" endY="760.0" layoutX="254.0" layoutY="0.0" startX="0.0" startY="0.0" stroke="#D4A64A" strokeWidth="1.1" />
+                <Label fx:id="lblStoreName" layoutX="55.0" layoutY="49.0" style="-fx-text-fill:#D4A64A; -fx-font-size:28; -fx-font-weight:bold;" text="VELOURA" />
+
+                <VBox layoutX="30.0" layoutY="116.0" prefHeight="520.0" prefWidth="190.0" spacing="12.0">
+                    <children>
+                        <Button fx:id="btnDashboard" onAction="#goToDashboard" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="▥ Dashboard" />
+                        <Button fx:id="btnProducts" onAction="#goToProducts" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="▣ Products" />
+                        <Button fx:id="btnCustomers" onAction="#goToCustomers" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="♟ Customers" />
+                        <Button fx:id="btnSales" onAction="#goToSales" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="🛒 Sales" />
+                        <Button fx:id="btnInventory" onAction="#goToInventory" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:linear-gradient(to right,#F2C66D,#B98224); -fx-text-fill:#06101F; -fx-font-weight:bold; -fx-background-radius:12;" text="▣ Inventory" />
+                        <Button fx:id="btnUsers" onAction="#goToUsers" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="♙ Users" />
+                        <Button fx:id="btnProductStats" onAction="#goToProductStats" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:rgba(2,9,16,0.50); -fx-text-fill:#F8FAFC; -fx-background-radius:12; -fx-border-color:#8B6526; -fx-border-radius:12;" text="📈 Product Stats" />
+                        <Button fx:id="btnLogout" onAction="#handleLogout" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color:transparent; -fx-text-fill:white;" text="↩ Logout" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+        <VBox layoutX="285.0" layoutY="25.0" prefHeight="710.0" prefWidth="845.0" spacing="16.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="285.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="25.0">
+            <children>
+
+                <Label style="-fx-text-fill:#F8FAFC; -fx-font-size:40px; -fx-font-family:Georgia;" text="Inventory" />
+                <Pane prefHeight="2.0" prefWidth="830.0" style="-fx-background-color:#D8A847;" />
+
+                <HBox fx:id="lowStockAlertBox" alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="830.0" spacing="14.0" style="-fx-background-color:rgba(91,31,43,0.82); -fx-background-radius:16; -fx-border-color:#D8A847; -fx-border-radius:16; -fx-padding:12 16 12 16;">
+                    <children>
+                        <Label style="-fx-text-fill:#FFD166; -fx-font-size:22px; -fx-font-weight:bold;" text="⚠" />
+                        <VBox prefWidth="500.0" spacing="2.0">
+                            <children>
+                                <Label fx:id="lblAlertTitle" style="-fx-text-fill:#FFF2CC; -fx-font-size:15px; -fx-font-weight:bold;" text="Inventory Alert" />
+                                <Label fx:id="lblAlertMessage" style="-fx-text-fill:white; -fx-font-size:12px;" text="Some items need urgent restocking." />
+                                <Label fx:id="lblAlertDetails" style="-fx-text-fill:#F6D7D7; -fx-font-size:11px;" text="Low Stock: 0 | Out of Stock: 0" />
+                            </children>
+                        </VBox>
+                        <Button fx:id="btnViewLowStock" onAction="#handleViewLowStock" prefHeight="34.0" prefWidth="104.0" style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224); -fx-text-fill:#06101F; -fx-font-size:12px; -fx-font-weight:bold; -fx-background-radius:10;" text="View Low" />
+                        <Button fx:id="btnDismissAlert" onAction="#handleDismissAlert" prefHeight="34.0" prefWidth="52.0" style="-fx-background-color:transparent; -fx-border-color:#F6D7D7; -fx-text-fill:#F6D7D7; -fx-border-radius:10; -fx-background-radius:10; -fx-font-size:12px;" text="✕" />
+                    </children>
+                </HBox>
+
+                <GridPane hgap="20.0" prefWidth="830.0" vgap="20.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="8.0" style="-fx-background-color:rgba(4,10,18,0.78); -fx-background-radius:18; -fx-border-color:#8B6526; -fx-border-radius:18;">
+                            <children>
+                                <Label style="-fx-text-fill:white; -fx-font-size:17px;" text="Total Variants" />
+                                <Label fx:id="lblTotalVariants" style="-fx-text-fill:#E2B54B; -fx-font-size:26px; -fx-font-weight:bold;" text="0" />
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="8.0" style="-fx-background-color:rgba(4,10,18,0.78); -fx-background-radius:18; -fx-border-color:#8B6526; -fx-border-radius:18;" GridPane.columnIndex="1">
+                            <children>
+                                <Label style="-fx-text-fill:white; -fx-font-size:17px;" text="Total Units" />
+                                <Label fx:id="lblTotalUnits" style="-fx-text-fill:#E2B54B; -fx-font-size:26px; -fx-font-weight:bold;" text="0" />
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="8.0" style="-fx-background-color:rgba(4,10,18,0.78); -fx-background-radius:18; -fx-border-color:#8B6526; -fx-border-radius:18;" GridPane.rowIndex="1">
+                            <children>
+                                <Label style="-fx-text-fill:white; -fx-font-size:17px;" text="Low Stock" />
+                                <Label fx:id="lblLowStock" style="-fx-text-fill:#E2B54B; -fx-font-size:26px; -fx-font-weight:bold;" text="0" />
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="8.0" style="-fx-background-color:rgba(4,10,18,0.78); -fx-background-radius:18; -fx-border-color:#8B6526; -fx-border-radius:18;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Label style="-fx-text-fill:white; -fx-font-size:17px;" text="Out of Stock" />
+                                <Label fx:id="lblOutOfStock" style="-fx-text-fill:#E2B54B; -fx-font-size:26px; -fx-font-weight:bold;" text="0" />
+                            </children>
+                        </VBox>
+                    </children>
+
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="405.0" />
+                        <ColumnConstraints prefWidth="405.0" />
+                    </columnConstraints>
+
+                    <rowConstraints>
+                        <RowConstraints prefHeight="100.0" />
+                        <RowConstraints prefHeight="100.0" />
+                    </rowConstraints>
+                </GridPane>
+
+                <GridPane hgap="12.0" prefWidth="830.0" vgap="8.0">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="310.0" />
+                        <ColumnConstraints prefWidth="130.0" />
+                        <ColumnConstraints prefWidth="130.0" />
+                        <ColumnConstraints prefWidth="130.0" />
+                        <ColumnConstraints prefWidth="120.0" />
+                    </columnConstraints>
+
+                    <children>
+                        <Label style="-fx-text-fill:white; -fx-font-size:14px;" text="Search" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label style="-fx-text-fill:white; -fx-font-size:14px;" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label style="-fx-text-fill:white; -fx-font-size:14px;" text="Brand" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <Label style="-fx-text-fill:white; -fx-font-size:14px;" text="Status" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                        <TextField fx:id="txtSearch" onKeyReleased="#handleSearch" prefHeight="42.0" promptText="Search by barcode or product name..." style="-fx-background-color:rgba(2,9,16,0.82); -fx-background-radius:10; -fx-border-color:#8B6526; -fx-border-radius:10; -fx-text-fill:white; -fx-prompt-text-fill:#9EA7C3;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbCategory" onAction="#handleFilter" prefHeight="42.0" promptText="All" style="-fx-background-color:rgba(2,9,16,0.82); -fx-background-radius:10; -fx-border-color:#8B6526; -fx-border-radius:10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbBrand" onAction="#handleFilter" prefHeight="42.0" promptText="All" style="-fx-background-color:rgba(2,9,16,0.82); -fx-background-radius:10; -fx-border-color:#8B6526; -fx-border-radius:10;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbStatus" onAction="#handleFilter" prefHeight="42.0" promptText="All" style="-fx-background-color:rgba(2,9,16,0.82); -fx-background-radius:10; -fx-border-color:#8B6526; -fx-border-radius:10;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Button fx:id="btnRefresh" onAction="#handleRefresh" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color:transparent; -fx-border-color:#E2B54B; -fx-border-radius:10; -fx-background-radius:10; -fx-text-fill:#E2B54B; -fx-font-size:14px;" text="Refresh" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Button fx:id="btnAddStock" onAction="#handleAddStock" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color:linear-gradient(to bottom,#F2C66D,#B98224); -fx-text-fill:#06101F; -fx-font-weight:bold; -fx-background-radius:10;" text="+ Add Stock" GridPane.rowIndex="2" />
+                    </children>
+
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+<TableView fx:id="inventoryTable"
+           prefHeight="250.0"
+           prefWidth="830.0"
+           style="-fx-background-color:rgba(2,9,16,0.88);
+                  -fx-control-inner-background:#06101F;
+                  -fx-table-cell-border-color:transparent;
+                  -fx-selection-bar:#B98224;
+                  -fx-selection-bar-non-focused:#8B6526;
+                  -fx-background-radius:12;
+                  -fx-border-radius:12;
+                  -fx-border-color:#8B6526;">                    <columns>
+                        <TableColumn fx:id="colVariantId" prefWidth="55.0" text="ID" />
+                        <TableColumn fx:id="colBarcode" prefWidth="95.0" text="Barcode" />
+                        <TableColumn fx:id="colProductName" prefWidth="110.0" text="Product" />
+                        <TableColumn fx:id="colBrand" prefWidth="90.0" text="Brand" />
+                        <TableColumn fx:id="colCategory" prefWidth="95.0" text="Category" />
+                        <TableColumn fx:id="colAudience" prefWidth="85.0" text="Audience" />
+                        <TableColumn fx:id="colSize" prefWidth="60.0" text="Size" />
+                        <TableColumn fx:id="colColor" prefWidth="70.0" text="Color" />
+                        <TableColumn fx:id="colPrice" prefWidth="70.0" text="Price" />
+                        <TableColumn fx:id="colCurrentQty" prefWidth="85.0" text="Qty" />
+                        <TableColumn fx:id="colStatus" prefWidth="95.0" text="Status" />
+                        <TableColumn fx:id="colExpiryDate" prefWidth="110.0" text="Expiry Date" />
+                        <TableColumn fx:id="colExpiryStatus" prefWidth="135.0" text="Expiry Status" />
+                    </columns>
+                </TableView>
+
+            </children>
+
+            <padding>
+                <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+            </padding>
+        </VBox>
+
+    </children>
+</AnchorPane>
